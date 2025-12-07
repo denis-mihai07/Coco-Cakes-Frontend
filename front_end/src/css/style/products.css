@@ -170,16 +170,11 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
 
 .products_content_container > .products_content_image img:hover {
   transform: scale(1.1);
-}
-
-.products_content_container > .products_content_image img:active {
-  transform: scale(1);
 }
 
 .products_content_container > .products_content_text {

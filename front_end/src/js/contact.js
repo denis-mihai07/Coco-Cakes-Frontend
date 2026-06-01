@@ -1,6 +1,6 @@
 let form = document.getElementById("contact_form");
 let submitButton = document.querySelector(
-  "#contact_form button[type='submit']"
+  "#contact_form button[type='submit']",
 );
 
 let loading = document.getElementById("loading");
@@ -29,16 +29,19 @@ form.addEventListener("submit", async (e) => {
     loading.classList.add("show");
 
     try {
-      const res = await fetch("https://api.coco-cakes.ro/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          senderName: first_name + " " + last_name,
-          senderEmail: email,
-          userMessage: mes,
-          phoneNumber: phone,
-        }),
-      });
+      const res = await fetch(
+        "https://api-cococakes.birtalandenis.com/send-email",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            senderName: first_name + " " + last_name,
+            senderEmail: email,
+            userMessage: mes,
+            phoneNumber: phone,
+          }),
+        },
+      );
       if (res.ok) {
         setTimeout(() => {
           showMessage("Mesajul introdus a fost trimis cu succes.", true);

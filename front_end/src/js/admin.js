@@ -20,19 +20,19 @@ const f = async () => {
   console.log(images);
 
   products_images.forEach((img, index) => {
-    let slot;
+    let slot = undefined;
     images.forEach((image, i) => {
       if (image.slot == index + 1) slot = i;
     });
-    if (slot) img.src = images[slot].url;
+    if (slot != undefined) img.src = images[slot].url;
   });
 
   prices_images.forEach((img, index) => {
-    let slot;
+    let slot = undefined;
     images.forEach((image, i) => {
       if (image.slot == index + 1 + 5) slot = i;
     });
-    if (slot) img.src = images[slot].url;
+    if (slot != undefined) img.src = images[slot].url;
   });
 };
 
